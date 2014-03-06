@@ -6,5 +6,9 @@ What is this:
 
    'sonydb' is a maintenance application for sony network players.
 
+diff:
+  only in sonydb.cpp
+
 License:
 	BSD license
+

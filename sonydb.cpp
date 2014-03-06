@@ -8,6 +8,7 @@
 #include <string.h>
 #include <fstream>
 #include "sonydb.h"
+#include <cstdlib>
 
 using namespace std;
 
@@ -2655,7 +2656,12 @@ bool SonyDb::detectPlayer()
 
 	SetErrorMode(0); //restore error mode to normal
 #else
+  char first_candidate[100];
+  sprintf(first_candidate, "/media/%s/disk", getenv("USER"));
+
 	char* detect_letter[] = {
+    first_candidate,
+		"/media/usbdisk",
 		"/media/usbdisk",
 		"/media/usbdisk1",
 		"/media/WALKMAN",
